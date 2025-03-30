@@ -1,0 +1,24 @@
+#Go inside Docker Container to execute shell command:
+======================================================
+$ sudo docker exec -it <container_name/ID> bash
+
+#Create an image of a running Container:
+=========================================
+$ sudo docker commit <container_ID> <specify_image_name>
+
+#Upload Image to the DockerHub:
+================================
+1. DockerHub accept specific naming strategy, so you have to create image following that naming startegy, i.e, image name should be <your_dockerhub_user_name>/<any_image_name>
+
+2. If image is already with you but name is not matching with naming strategy, then create a copy of the image and name as per strategy:
+$ sudo docker tag <existing_image_name> <your_dockerhub_user_name>/<any_image_name>
+
+3. Login to DockerHub:
+$ sudo docker login
+
+4. Type the credentials
+Username:
+Password:
+
+5. Upload the image:
+$ sudo docker push <image_name>
